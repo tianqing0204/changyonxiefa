@@ -1,0 +1,68 @@
+一、寄生式继承的写法
+function autoTable () {
+
+  table.apply(this, arguments);
+}
+autoTable.prototype = Object.creat(table.prototype);
+二、call、apply、bind的区别；
+
+call和apply的第一个参数是this要指向的对象，call第二个参数是要传入的参数，apply第二个参数是参数数组，他俩会立即调用，bind不会被立即调用用法跟call一样，需要手动调用
+三、数组的方法：
+concat 连接两个数组
+join，把数组转化成字符串
+push,向数组末尾添加元素
+pop向数组头部添加元素
+reverse 翻转数组
+slice（start，end）返回一个新数组，前包后不包的数组。
+sort 排序
+四、字符串的方法：
+indexOf()返回查找元素的下标，如果没有返回-1
+substring(start, end) 返回start到end-1的字符，参数不可以为负数
+slice（start， end） 返回从start到end-1的字符，参数可以为负数，如果是负数就从右截取
+substr (start， length) start可正可负，负数代表从右截取
+split（）已什么字符截取成数组
+四、什么是闭包：
+一个函数中包含另外一个函数，内部函数有权访问外部函数的变量或者函数。
+var obj = {
+ run： functon (){
+alert(a);
+return function () {
+var a = 10;
+ return 1111;
+}
+}
+}
+obj.run ();
+五、作用域链：
+内部有权访问外部的变量或者函数
+六、vuex:
+state: {
+        city: ''
+    },
+    actions: {
+        add_city ({commit}, city) {
+            commit('ADDCITY', city);
+        }
+    },
+    mutations: {
+        ADDCITY (state, city) {
+            state.city = city;
+        }
+    }
+
+组件里边这样触发action this.$store.dispatch('add_city', '北京');
+取值：changecity () {
+            return this.$store.state.city;
+        }
+七、react的生命周期
+
+
+
+
+
+
+
+
+
+
+

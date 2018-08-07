@@ -1,0 +1,11 @@
+组件里：import { widthRouter } from 'react-router-dom';
+@widthRouter// 修改类的行为
+
+
+
+在package.json 里要配一个插件
+“plugins”: [
+              "transform-decorators-legacy"
+
+]
+
